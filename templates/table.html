@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Appointments</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light " >
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            
+          <img src="/static/flag.jpg" height="30px" width="70px" style="margin-left: 55px; margin-top: 25px;">
+        </li>
+        <li class="nav-item active">
+          <h6 style="margin-left: 30px; margin-top: 20px;margin-bottom: 20px;">Government<br> of Canada</h6> 
+        </li>
+          <li class="nav-item active">
+          <h6 style="margin-left: 30px; margin-top: 20px; margin-bottom: 20px;">Gouvernement<br> du Canada</h6>    
+      </ul>
+      
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <hr>
+
+    <table>
+      <a href="/">Go to Home</a>
+    <table  class="table table-striped">
+
+     <tr><th> ID</th><th> Name</th><th> Age</th><th> City</th><th> Email</th> <th>  Conatct</th> <th> DOB </th> <th> Update Details</th> <th> Delete Record</th></td>
+    {% for pt in aptmnt %}
+     
+     <tr>
+
+        <td> {{pt.std_id}}</td>
+
+        <td> {{pt.std_name}}</td>
+
+        <td> {{pt.std_age}}</td>
+
+        <td> {{pt.std_city}}</td>
+
+        <td> {{pt.std_email}}</td>
+
+        <td> {{pt.std_contact}}</td>
+
+        <td> {{pt.std_dob}}</td>
+
+        <td><a href="/edit/{{pt.std_id}}">edit</a></td>   
+
+        <td><a href="/delete/{{pt.std_id}}">delete</a></td>  
+
+      </tr>
+      
+      {% endfor %}
+
+    </table>
+    
+</body>
+</html>
