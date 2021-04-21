@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    input {
+
+  margin: 1px 0;
+  display: inline-block;
+  border: 1.5px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+body{
+    background-image: url('/static/covid.jpg.jpg');
+
+}
+</style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light " >
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                
+              <img src="/static/flag.jpg" height="30px" width="70px" style="margin-left: 55px; margin-top: 25px;">
+            </li>
+            <li class="nav-item active">
+              <h6 style="margin-left: 30px; margin-top: 20px;margin-bottom: 20px;">Government<br> of Canada</h6> 
+            </li>
+              <li class="nav-item active">
+              <h6 style="margin-left: 30px; margin-top: 20px; margin-bottom: 20px;">Gouvernement<br> du Canada</h6>    
+          </ul>
+          
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+      <hr>
+
+ <center>
+    <form action="/update/{{aptmnt.std_id}}" method="POST">
+        {% csrf_token %}
+       <span style="margin-bottom: 5em; border-radius: 2px;"> <input name="std_id" required value="{{aptmnt.std_id}}"></span><br><br>
+       <span><input name="std_name" required value="{{aptmnt.std_name}}"> </span><br><br>
+       <span><input name="std_age" required  value="{{aptmnt.std_age}}"></span><br><br>
+       <span><input name="std_city" required value="{{aptmnt.std_city}}"></span><br><br>
+       <span><input name="std_email" required  value="{{aptmnt.std_email}}"></span><br><br>
+       <span><input name="std_contact" required  value="{{aptmnt.std_contact}}"></span><br><br>
+       <span><input name="std_dob" required  value="{{aptmnt.std_dob}}"></span><br><br>
+          <button type="submit">Update</button>
+
+
+
+</form>
+</center>  
+</body>
+</html>
